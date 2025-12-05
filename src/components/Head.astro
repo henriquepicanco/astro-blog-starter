@@ -1,0 +1,22 @@
+---
+import { site } from "../metadata";
+
+import { ClientRouter } from "astro:transitions";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const setTitle = title ? `${title} | ${site.name}` : site.name;
+const setDescription = description || site.description;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{setTitle}</title>
+<meta name="description" content={setDescription} />
+<link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+<ClientRouter />

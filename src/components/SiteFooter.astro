@@ -1,15 +1,24 @@
 ---
-const { site } = Astro.props;
+import { site } from "../metadata";
+
+import { getCollection } from "astro:content";
+import Container from "./Container.astro";
+
 const currentYear = new Date().getFullYear();
+
+const pages = await getCollection("pages");
+
+interface Props {
+  size?: "wide" | "narrow";
+}
 ---
 
 <footer class="mt-4 md:mt-8 lg:mt-12 bg-black text-white pt-10">
-  <div class="max-w-200 mx-auto px-4">
+  <Container size="wide">
     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
       <div>
         <h3 class="font-bold uppercase mb-2">Social</h3>
         <ul>
-          <li>Twitter</li>
           <li>Bluesky</li>
           <li>Instagram</li>
           <li>GitHub</li>
@@ -18,9 +27,13 @@ const currentYear = new Date().getFullYear();
       <div>
         <h3 class="font-bold uppercase mb-2">Pages</h3>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          {
+            pages.map((page) => (
+              <li>
+                <a href={page.id}>{page.data.title}</a>
+              </li>
+            ))
+          }
         </ul>
       </div>
       <div>
@@ -47,5 +60,5 @@ const currentYear = new Date().getFullYear();
         } - All Rights Reserved.
       </p>
     </div>
-  </div>
+  </Container>
 </footer>

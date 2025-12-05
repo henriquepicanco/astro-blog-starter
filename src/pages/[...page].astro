@@ -1,6 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
@@ -11,10 +14,46 @@ export async function getStaticPaths() {
   }));
 }
 
+interface Props {
+  page: CollectionEntry<"pages">;
+  context: "page";
+}
+
 const { page } = Astro.props;
 const { Content } = await render(page);
 ---
 
-<Layout>
-  <Content />
+<Layout context="page" title={page.data.title} description={page.data.summary}>
+  <article class="flex flex-col gap-5">
+    <header class="flex flex-col gap-5">
+      <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl leading-normal">
+        {page.data.title}
+      </h1>
+      {
+        page.data.summary && (
+          <p class="text-lg text-gray-800">{page.data.summary}</p>
+        )
+      }
+    </header>
+    {
+      page.data.thumbnail && (
+        <div>
+          <Picture
+            src={page.data.thumbnail.src}
+            alt={
+              page.data.thumbnail.alt
+                ? page.data.thumbnail.alt
+                : page.data.title
+            }
+            layout="constrained"
+            width={1200}
+            height={700}
+          />
+        </div>
+      )
+    }
+    <div class="text-base md:text-lg leading-relaxed">
+      <Content />
+    </div>
+  </article>
 </Layout>

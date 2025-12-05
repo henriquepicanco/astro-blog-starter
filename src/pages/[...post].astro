@@ -1,6 +1,9 @@
 ---
 import { getCollection, render } from "astro:content";
+import { Picture } from "astro:assets";
+
 import Layout from "../layouts/Layout.astro";
+import type { CollectionEntry } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -11,12 +14,16 @@ export async function getStaticPaths() {
   }));
 }
 
-const isSingle = true;
+interface Props {
+  post: CollectionEntry<"posts">;
+  context: "post";
+}
+
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout isSingle={isSingle}>
+<Layout context="post" title={post.data.title} description={post.data.summary}>
   <article class="flex flex-col gap-5">
     <header class="flex flex-col gap-5">
       <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl leading-normal">
@@ -24,11 +31,29 @@ const { Content } = await render(post);
       </h1>
       {
         post.data.summary && (
-          <p class="text-lg text-gray-700">{post.data.summary}</p>
+          <p class="text-lg text-gray-800">{post.data.summary}</p>
         )
       }
     </header>
-    <div class="text-base md:text-lg leading-relaxed">
+    {
+      post.data.thumbnail && (
+        <div>
+          <Picture
+            class="rounded-xl"
+            src={post.data.thumbnail?.src}
+            alt={
+              post.data.thumbnail.alt
+                ? post.data.thumbnail.alt
+                : post.data.title
+            }
+            layout="constrained"
+            width={1200}
+            height={700}
+          />
+        </div>
+      )
+    }
+    <div class="text-base md:text-lg leading-loose">
       <Content />
     </div>
   </article>

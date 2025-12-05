@@ -1,35 +1,38 @@
 ---
+import { site } from "../metadata";
+
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import Head from "../components/Head.astro";
+import Container from "../components/Container.astro";
 
-import { ClientRouter } from "astro:transitions";
-import { site } from "../metadata.js";
+interface Props {
+  title?: string;
+  description?: string;
+  context?: "post" | "page";
+  size?: "wide" | "narrow";
+}
 
-const { isSingle } = Astro.props;
+const { title, description, context } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={site.language}>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{site.name}</title>
-    <meta name="description" content={site.description} />
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
-    <ClientRouter />
+    <Head title={title} description={description} />
   </head>
   <body>
     <div>
-      <SiteHeader site={site} isSingle={isSingle} />
+      <SiteHeader context={context} />
 
       <main>
-        <div class="max-w-200 mx-auto px-4">
+        <Container size="narrow">
           <slot />
-        </div>
+        </Container>
       </main>
 
-      <SiteFooter site={site} />
+      <SiteFooter />
     </div>
   </body>
 </html>

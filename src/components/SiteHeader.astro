@@ -1,25 +1,37 @@
 ---
-const { isSingle, site, ...props } = Astro.props;
+import { site } from "../metadata";
+
+import Container from "./Container.astro";
+
+interface Props {
+  context?: "post" | "page";
+  size?: "wide" | "narrow";
+}
+
+const { context } = Astro.props;
+
+const TitleTag = context === "post" || context === "page" ? "p" : "h1";
 ---
 
 <header class="border-b border-black mb-10">
-  <div class="max-w-200 mx-auto px-4">
+  <Container size="wide">
     <div class="flex flex-row gap-2 py-5">
-      <div class="flex-1 flex flex-row justify-start"></div>
-      <div class="flex-1 flex flex-row justify-center">
-        {
-          isSingle ? (
-            <p class="font-bold uppercase text-lg">
-              <a href="/">{site.name}</a>
-            </p>
-          ) : (
-            <h1 class="font-bold uppercase text-lg">
-              <a href="/">{site.name}</a>
-            </h1>
-          )
-        }
+      <div class="flex-1 flex flex-col items-start justify-center">
+        <p>V 0.0.1</p>
       </div>
-      <div class="flex-1 flex flex-row justify-end"></div>
+      <div class="flex-1 flex flex-row items-center justify-center">
+        <TitleTag class="font-bold uppercase text-lg flex">
+          <a href="/">{site.name}</a>
+        </TitleTag>
+      </div>
+      <div class="flex-1 flex flex-row justify-end">
+        <a
+          class="bg-black text-white px-4 py-1 rounded-full font-bold flex justify-center items-center"
+          href="https://github.com/henriquepicanco"
+          target="_blank"
+          rel="noopener noreferrer">GitHub</a
+        >
+      </div>
     </div>
-  </div>
+  </Container>
 </header>

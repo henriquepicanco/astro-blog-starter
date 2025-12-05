@@ -1,0 +1,14 @@
+---
+interface Props {
+  size?: "wide" | "narrow";
+  class?: string;
+}
+
+const { size = "wide", class: className } = Astro.props;
+
+const widthClass = size === "wide" ? "max-w-5xl" : "max-w-3xl";
+---
+
+<div class:list={[widthClass, "mx-auto px-4", className]}>
+  <slot />
+</div>

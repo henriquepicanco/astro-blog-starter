@@ -1,32 +1,37 @@
 ---
+import { Picture } from "astro:assets";
+
 const { post } = Astro.props;
 ---
 
-<article>
-  <div class="flex flex-row gap-2">
-    {
-      post.data.thumbnail && (
-        <div>
-          <img
+<article class="flex flex-col lg:flex-row gap-8">
+  {
+    post.data.thumbnail && (
+      <div>
+        <a class="inline-block" href={post.id}>
+          <Picture
+            class="rounded-xl"
             src={post.data.thumbnail.src}
             alt={
               post.data.thumbnail.alt
                 ? post.data.thumbnail.alt
                 : post.data.title
             }
+            width={300}
+            height={200}
           />
-        </div>
-      )
-    }
-    <div class="flex flex-col gap-2 md:gap-5">
-      <header>
-        <h1 class="font-bold text-lg md:text-xl lg:text-2xl">
-          <a href={post.id}>
-            {post.data.title}
-          </a>
-        </h1>
-      </header>
-      {post.data.summary && <div>{post.data.summary}</div>}
-    </div>
+        </a>
+      </div>
+    )
+  }
+  <div class="flex flex-col gap-2 md:gap-5 flex-1 justify-center">
+    <header>
+      <h1 class="font-bold text-lg md:text-xl lg:text-2xl">
+        <a href={post.id}>
+          {post.data.title}
+        </a>
+      </h1>
+    </header>
+    {post.data.summary && <div>{post.data.summary}</div>}
   </div>
 </article>
