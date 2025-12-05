@@ -12,8 +12,8 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [
       [rehypeClassNames, {
-        "h1": "text-2xl",
-        "p": "mb-4"
+        "h1": "text-2xl mb-2",
+        "p": "mb-4 lg:mb-8"
       }]
     ]
   }
