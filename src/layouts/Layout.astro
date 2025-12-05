@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+import { ClientRouter } from "astro:transitions";
+import { site } from "../metadata.js";
+
+const { isSingle } = Astro.props;
+---
+
+<!doctype html>
+<html lang={site.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{site.name}</title>
+    <meta name="description" content={site.description} />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+    <ClientRouter />
+  </head>
+  <body>
+    <div>
+      <SiteHeader site={site} isSingle={isSingle} />
+
+      <main>
+        <div class="max-w-200 mx-auto px-4">
+          <slot />
+        </div>
+      </main>
+
+      <SiteFooter site={site} />
+    </div>
+  </body>
+</html>

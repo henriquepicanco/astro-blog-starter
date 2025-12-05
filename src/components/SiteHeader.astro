@@ -1,0 +1,25 @@
+---
+const { isSingle, site, ...props } = Astro.props;
+---
+
+<header class="border-b border-black mb-10">
+  <div class="max-w-200 mx-auto px-4">
+    <div class="flex flex-row gap-2 py-5">
+      <div class="flex-1 flex flex-row justify-start"></div>
+      <div class="flex-1 flex flex-row justify-center">
+        {
+          isSingle ? (
+            <p class="font-bold uppercase text-lg">
+              <a href="/">{site.name}</a>
+            </p>
+          ) : (
+            <h1 class="font-bold uppercase text-lg">
+              <a href="/">{site.name}</a>
+            </h1>
+          )
+        }
+      </div>
+      <div class="flex-1 flex flex-row justify-end"></div>
+    </div>
+  </div>
+</header>

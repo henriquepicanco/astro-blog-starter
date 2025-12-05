@@ -1,0 +1,51 @@
+---
+const { site } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-4 md:mt-8 lg:mt-12 bg-black text-white pt-10">
+  <div class="max-w-200 mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+      <div>
+        <h3 class="font-bold uppercase mb-2">Social</h3>
+        <ul>
+          <li>Twitter</li>
+          <li>Bluesky</li>
+          <li>Instagram</li>
+          <li>GitHub</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold uppercase mb-2">Pages</h3>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold uppercase mb-2">Topics</h3>
+        <ul>
+          <li>Category 1</li>
+          <li>Category 2</li>
+          <li>Category 3</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold uppercase mb-2">Others</h3>
+        <ul>
+          <li>Henrique Picanço's website</li>
+          <li>Astro</li>
+          <li>Tailwind CSS</li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-sm mt-2 md:mt-6 lg:mt-8 border-t border-white/50 py-5">
+      <p>
+        {currentYear == 2025 ? "© 2025" : `© 2025 - ${currentYear}`} - {
+          site.name
+        } - All Rights Reserved.
+      </p>
+    </div>
+  </div>
+</footer>
