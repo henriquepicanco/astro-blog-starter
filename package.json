@@ -1,0 +1,27 @@
+{
+  "name": "astro-blog-starter",
+  "description": "This project aims to create a starter, a template, to create a blog using Astro and Markdown files. Those contents lives under the `./src/contents` folders, for **posts**, **pages** and **images**. Those images will be processed by Astro on build time to offer a fast and better loading times.",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "author": {
+    "name": "Henrique Picanço",
+    "email": "114828539+henriquepicanco@users.noreply.github.com",
+    "url": "https://henriquepicanco.dev"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "^5.16.4",
+    "rehype-class-names": "^2.0.0",
+    "tailwindcss": "^4.1.17"
+  }
+}
