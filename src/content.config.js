@@ -45,8 +45,7 @@ export const collections = {
         thumbnail: z
           .object({
             src:
-              image()
-                .optional(),
+              image(),
             alt: z
               .string()
               .optional()
@@ -86,8 +85,7 @@ export const collections = {
         thumbnail: z
           .object({
             src:
-              image()
-                .optional(),
+              image(),
             alt: z
               .string()
               .optional()
