@@ -15,9 +15,9 @@ tags:
   - Anim Magna
   - Sint Velit
   - Cupidatat Mollit Voluptate
-# thumbnail:
-#   src:
-#   alt:
+thumbnail:
+  src: ../images/brett-jordan-unsplash.jpg
+  alt: Brett Jordan on Unsplash
 ---
 
 Commodo officia nisi aliquip elit. Sunt dolore pariatur eiusmod officia velit. Nulla culpa pariatur dolor esse eiusmod cillum sunt occaecat dolore exercitation anim.
