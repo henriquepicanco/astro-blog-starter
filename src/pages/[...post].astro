@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { post: post.id },
+    props: { post },
+  }));
+}
+
+const isSingle = true;
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout isSingle={isSingle}>
+  <article class="flex flex-col gap-5">
+    <header class="flex flex-col gap-5">
+      <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl leading-normal">
+        {post.data.title}
+      </h1>
+      {
+        post.data.summary && (
+          <p class="text-lg text-gray-700">{post.data.summary}</p>
+        )
+      }
+    </header>
+    <div class="text-base md:text-lg leading-relaxed">
+      <Content />
+    </div>
+  </article>
+</Layout>
