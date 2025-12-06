@@ -4,10 +4,10 @@ date: 2025-01-01T13:15:00-03:00
 title: Lorem ipsum dolor sit amet facilisi tempor
 summary: Stet ipsum sit vel et sed elitr sed consetetur ullamcorper option at consequat. Dolor kasd erat nonumy aliquyam dolor veniam suscipit invidunt velit eirmod vero. Et kasd diam vero delenit elitr. Amet sed gubergren nibh. Et elitr adipiscing erat. Voluptua autem gubergren
 authors:
-  - Rajesh Kootrapalli
+  - maci
 categories:
-  - Vulputate Clita
-  - Consetetur
+  - entertainment
+  - sports
 tags:
   - Lorem Ipsum
   - Dolor

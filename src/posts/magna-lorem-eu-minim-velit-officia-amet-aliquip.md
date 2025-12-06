@@ -4,10 +4,10 @@ date: 2025-02-06T08:00:00-03:00
 title: Magna Lorem eu minim velit officia amet aliquip
 summary: Dolore ullamco commodo elit in qui dolore consectetur aute aute voluptate. Cupidatat ex eiusmod nulla ipsum. Cupidatat cupidatat magna laborum in excepteur ex nulla Lorem ut.
 authors:
-  - Rajesh Kootrapalli
+  - maci
 categories:
-  - Adipiscing Sanctus
-  - Aliquyam
+  - sports
+  - development
 tags:
   - Lorem Ipsum
   - Dolor

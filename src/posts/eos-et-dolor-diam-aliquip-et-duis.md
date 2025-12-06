@@ -4,11 +4,11 @@ date: 2025-01-01T12:00:00-03:00
 title: Eos et dolor diam aliquip et duis
 summary: Imperdiet sit amet et erat clita elitr ea takimata autem lorem diam veniam kasd et. Et amet clita sit kasd sanctus option eu gubergren erat magna et stet elitr lorem stet erat.
 authors:
-  - Sheldon Cooper
-  - Leonard Hofstadter
+  - peyton
+  - alexane
 categories:
-  - Adipiscing Sanctus
-  - Aliquyam
+  - sports
+  - development
 tags:
   - Adipiscing
   - Enim vulputate

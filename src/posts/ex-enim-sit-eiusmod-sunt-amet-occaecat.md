@@ -4,10 +4,10 @@ date: 2025-01-04T06:00:00-03:00
 title: Ex enim sit eiusmod sunt amet occaecat
 summary: Lorem minim minim irure consequat adipisicing voluptate ea irure eiusmod ad ipsum. Officia eiusmod dolore mollit eu esse qui reprehenderit eu veniam. Aliquip do ut nostrud ullamco consectetur deserunt ullamco.
 authors:
-  - Sheldon Cooper
+  - peyton
 categories:
-  - Culpa Reprehenderit
-  - Fugiat Magna
+  - development
+  - entertainment
 tags:
   - Laboris Cillum
   - Mollit Excepteur

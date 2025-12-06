@@ -4,17 +4,16 @@ date: 2025-05-03T09:00:00-03:00
 title: Incididunt reprehenderit magna mollit ea ea ad nostrud irure eu
 summary: Consequat esse nisi elit et pariatur voluptate consectetur ad quis eu culpa voluptate ut. Nostrud fugiat ullamco ut in in culpa. Et non occaecat minim mollit ut adipisicing sunt eu mollit laboris velit ullamco excepteur amet.
 authors:
-  - Leonard Hofstadter
+  - alexane
 categories:
-  - Vulputate Clita
-  - Consetetur
+  - sports
 tags:
   - Adipiscing
   - Enim vulputate
   - Aliquyam erat
-# thumbnail:
-#   src:
-#   alt:
+thumbnail:
+  src: ../images/rahul-mishra-unsplash.jpg
+  alt: An image by Rahul Mishra from Unsplash
 ---
 
 Sit culpa nisi sint ex ullamco amet mollit duis duis nostrud labore occaecat aliqua. Culpa et qui excepteur eu Lorem in nisi ea anim anim. Tempor cillum eu incididunt velit anim laborum cillum excepteur. Est ullamco Lorem tempor velit quis aliquip excepteur nisi anim nulla. Enim fugiat tempor mollit eiusmod.

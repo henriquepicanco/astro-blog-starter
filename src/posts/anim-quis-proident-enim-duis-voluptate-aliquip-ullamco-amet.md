@@ -4,18 +4,18 @@ date: 2025-07-16T13:00:00-03:00
 title: Anim quis proident enim duis voluptate aliquip ullamco amet
 summary: Minim ex sit dolore ea sint mollit cupidatat. Laborum anim culpa officia ullamco fugiat amet elit sunt sunt esse exercitation cillum ex esse. Cupidatat esse ad consectetur Lorem. Laboris adipisicing culpa pariatur eiusmod aliqua aute adipisicing excepteur dolore id duis elit elit.
 authors:
-  - Howard Wollowitz
+  - marta
 categories:
-  - Adipiscing Sanctus
-  - Aliquyam
+  - entertainment
+  - sports
 tags:
   - Laboris Cillum
   - Mollit Excepteur
   - Nisi Anim Laborum
   - Consequat Dolor
-# thumbnail:
-#   src:
-#   alt:
+thumbnail:
+  src: ../images/matt-popovich-unsplash.jpg
+  alt: An image by Matt Popovich from Unsplash
 ---
 
 Nostrud anim consequat sunt adipisicing cupidatat qui qui ut consequat nostrud fugiat ullamco nisi veniam. Eiusmod fugiat do officia irure. Aute qui cillum Lorem aute commodo anim cupidatat quis consectetur et sunt. Voluptate enim duis ea cillum ea excepteur pariatur esse quis. Dolore sit veniam adipisicing cillum voluptate do laboris.

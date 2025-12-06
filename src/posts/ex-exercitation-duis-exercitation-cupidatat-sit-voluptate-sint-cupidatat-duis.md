@@ -4,19 +4,21 @@ date: 2025-03-10T12:00:00-03:00
 title: Ex exercitation duis exercitation cupidatat sit voluptate sint cupidatat duis
 summary: Qui enim elit voluptate officia sunt veniam aute aliquip pariatur aliquip aliqua. Consequat enim est id amet nulla dolore ipsum cillum. Quis ut eu ex incididunt. Aliqua elit velit sunt enim id excepteur sit laboris.
 authors:
-  - Leonard Hofstadter
-  - Rajesh Kootrapalli
+  - peyton
+  - marta
+  - alexane
+  - maci
 categories:
-  - Culpa Reprehenderit
-  - Fugiat Magna
+  - entertainment
+  - sports
 tags:
   - Laboris Cillum
   - Mollit Excepteur
   - Nisi Anim Laborum
   - Consequat Dolor
-# thumbnail:
-#   src:
-#   alt:
+thumbnail:
+  src: ../images/stephen-harlan-unsplash.jpg
+  alt: An image by Stephen Harlan from Unsplash
 ---
 
 Do qui Lorem adipisicing velit commodo irure adipisicing. Laborum occaecat mollit veniam non ea pariatur Lorem consectetur. Sit dolore duis eiusmod qui elit voluptate elit. Incididunt elit quis laboris laborum consectetur consequat qui tempor aliqua aliquip. Et dolor id commodo fugiat consectetur duis. Adipisicing do occaecat laboris duis consequat et pariatur ea nostrud nostrud ipsum anim esse. Deserunt aliqua enim mollit enim Lorem nisi eiusmod pariatur commodo dolor duis est.

@@ -4,11 +4,12 @@ date: 2025-01-02T11:30:00-03:00
 title: Anim adipisicing fugiat aliqua voluptate proident voluptate ullamco
 summary: Officia aliqua excepteur ad est enim eu labore. Ullamco est consectetur adipisicing ipsum est ut ex pariatur occaecat excepteur incididunt. Ea deserunt qui ipsum aute do et in consequat ea do ut id et consequat. Do ea eu qui aute.
 authors:
-  - Howard Wollowitz
-  - Rajesh Kootrapalli
+  - peyton
+  - marta
+  - maci
 categories:
-  - Deserunt ea Fugiat
-  - Cillum occaecat
+  - development
+  - entertainment
 tags:
   - Elit Aliquip
   - Cillum Aliqua
@@ -16,7 +17,7 @@ tags:
   - Sint Velit
   - Cupidatat Mollit Voluptate
 thumbnail:
-  src: ../images/brett-jordan-unsplash.jpg
+  src: /src/images/brett-jordan-unsplash.jpg
   alt: Brett Jordan on Unsplash
 ---
 
