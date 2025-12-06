@@ -1,0 +1,26 @@
+{
+  "development": {
+    "title": "Development",
+    "description": "Elit cupidatat amet excepteur qui aliqua. Laborum aliquip fugiat minim elit adipisicing nulla. Enim magna velit ullamco minim laborum sint incididunt velit.",
+    "image": {
+      "src": "",
+      "alt": ""
+    }
+  },
+  "entertainment": {
+    "title": "Entertainment",
+    "description": "Eiusmod commodo ullamco aute cupidatat nisi eiusmod commodo Lorem magna culpa est.",
+    "image": {
+      "src": "",
+      "alt": ""
+    }
+  },
+  "sports": {
+    "title": "Sports",
+    "description": "Veniam fugiat et duis nulla tempor tempor laboris amet mollit dolor pariatur veniam excepteur.",
+    "image": {
+      "src": "",
+      "alt": ""
+    }
+  }
+}

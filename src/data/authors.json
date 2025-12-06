@@ -1,0 +1,50 @@
+{
+  "peyton": {
+    "avatar": "",
+    "name": "Peyton Pfeffer",
+    "description": "Lorem ullamco magna veniam cupidatat anim. Ut commodo in exercitation pariatur. In duis aliqua consequat do officia. Esse minim sunt qui proident adipisicing.",
+    "url": "https://example.com",
+    "social": {
+      "bluesky": "https://bsky.app",
+      "twitter": "https://twitter",
+      "instagram": "https://instagram.com",
+      "github": "https://github.com"
+    }
+  },
+  "marta": {
+    "avatar": "",
+    "name": "Marta Cole",
+    "description": "Minim labore nisi consectetur cupidatat. Adipisicing minim Lorem excepteur nisi consequat voluptate velit adipisicing occaecat Lorem enim mollit adipisicing.",
+    "url": "https://example.com",
+    "social": {
+      "bluesky": "https://bsky.app",
+      "twitter": "https://twitter",
+      "instagram": "https://instagram.com",
+      "github": "https://github.com"
+    }
+  },
+  "alexane": {
+    "avatar": "",
+    "name": "Alexane Yundt",
+    "description": "Sunt elit minim magna ea labore. Dolore aliquip id eu anim ipsum ex et. Ut qui elit qui cupidatat consectetur id qui laboris eu aliqua et eu eu occaecat.",
+    "url": "https://example.com",
+    "social": {
+      "bluesky": "https://bsky.app",
+      "twitter": "https://twitter",
+      "instagram": "https://instagram.com",
+      "github": "https://github.com"
+    }
+  },
+  "maci": {
+    "avatar": "",
+    "name": "Maci Hayes",
+    "description": "Lorem commodo adipisicing reprehenderit est magna consectetur ea. Proident qui non laboris Lorem reprehenderit quis sit sit ut.",
+    "url": "https://example.com",
+    "social": {
+      "bluesky": "https://bsky.app",
+      "twitter": "https://twitter",
+      "instagram": "https://instagram.com",
+      "github": "https://github.com"
+    }
+  }
+}
