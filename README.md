@@ -1,6 +1,8 @@
 # The @henriquepicanco's Astro blog starter
 
-This project aims to create a starter, a template, to create a blog using Astro and Markdown files. Those contents lives under the `./src/contents` folders, for **posts**, **pages** and **images**. Those images will be processed by Astro on build time to offer a fast and better loading times.
+This project aims to create a starter, a template, to create a blog using Astro and Markdown files. The posts lives in `./src/posts`. Images are storaged at `./src/images` and they will be processed by Astro on build time to offer a fast and better loading times.
+
+This starter aims to provide paginated navigation for all posts, for categories, tags and individual authors as well.
 
 Tailwind CSS is also already configured to create beautiful sites with no hassle.
 
