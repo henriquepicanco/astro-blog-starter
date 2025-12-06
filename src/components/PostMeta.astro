@@ -1,0 +1,19 @@
+---
+const { frontmatter } = Astro.props;
+import PostAuthors from "./PostAuthors.astro";
+import PostDate from "./PostDate.astro";
+---
+
+{
+  (frontmatter.date || frontmatter.author) && (
+    <div class="flex flex-row gap-3 items-center">
+      <div class="flex flex-row gap-2">
+        <span class="bg-black rounded-full w-12 h-12 block" />
+      </div>
+      <div class="flex flex-col gap-1 text-sm justify-center">
+        <PostAuthors frontmatter={frontmatter} />
+        <PostDate frontmatter={frontmatter} />
+      </div>
+    </div>
+  )
+}

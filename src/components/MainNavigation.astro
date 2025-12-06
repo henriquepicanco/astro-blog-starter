@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+
+const categories = await getCollection("categories");
+---
+
+<nav>
+  <ul class="flex flex-row justify-center text-sm">
+    <li>
+      <a
+        class="block p-3 text-gray-800 hover:text-sky-500 relative after:h-0 hover:after:h-0.5 after:w-full after:bg-sky-500 after:absolute after:left-0 after:bottom-0 after:duration-200 duration-200"
+        href="/">Homepage</a
+      >
+    </li>
+    <li>
+      <a
+        class="block p-3 text-gray-800 hover:text-sky-500 relative after:h-0 hover:after:h-0.5 after:w-full after:bg-sky-500 after:absolute after:left-0 after:bottom-0 after:duration-200 duration-200"
+        href="/about">About</a
+      >
+    </li>
+    <li>
+      <a
+        class="block p-3 text-gray-800 hover:text-sky-500 relative after:h-0 hover:after:h-0.5 after:w-full after:bg-sky-500 after:absolute after:left-0 after:bottom-0 after:duration-200 duration-200"
+        href="/contact">Contact</a
+      >
+    </li>
+
+    {
+      categories && (
+        <>
+          <li class="flex items-center px-4">
+            <span class="w-0.5 h-5 bg-gray-300" />
+          </li>
+          {categories.map((category) => {
+            return (
+              <li>
+                <a
+                  class="block p-3 text-gray-800 hover:text-sky-500 relative after:h-0 hover:after:h-0.5 after:w-full after:bg-sky-500 after:absolute after:left-0 after:bottom-0 after:duration-200 duration-200"
+                  href={`/${category.id}`}
+                >
+                  {category.data.title}
+                </a>
+              </li>
+            );
+          })}
+        </>
+      )
+    }
+  </ul>
+</nav>

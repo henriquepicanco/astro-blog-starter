@@ -1,0 +1,39 @@
+---
+import site from "../data/site.json";
+import { type CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const { frontmatter } = Astro.props;
+const authors = await Promise.all(
+  frontmatter.authors.map((author: { id: string }) =>
+    getEntry("authors", author.id),
+  ),
+).then((authors) => authors.filter(Boolean) as CollectionEntry<"authors">[]);
+
+const formatter = new Intl.ListFormat(site.language, {
+  style: "long",
+  type: "conjunction",
+});
+
+const parts = formatter.formatToParts(authors.map((item) => item.data.name));
+---
+
+{
+  authors && (
+    <div>
+      {parts.map((part) => {
+        if (part.type === "literal") {
+          return <span>{part.value}</span>;
+        }
+
+        const author = authors.find((a) => a.data.name === part.value);
+
+        return (
+          <span class="font-bold">
+            <a href={`/authors/${author?.id}`}>{part.value}</a>
+          </span>
+        );
+      })}
+    </div>
+  )
+}

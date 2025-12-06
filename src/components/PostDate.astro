@@ -1,0 +1,14 @@
+---
+const { frontmatter } = Astro.props;
+import site from "../data/site.json";
+---
+
+<div>
+  <time datetime={frontmatter.date.toISOString()}>
+    {
+      frontmatter.date.toLocaleString(site.language, {
+        timezone: "UTC",
+      })
+    }
+  </time>
+</div>

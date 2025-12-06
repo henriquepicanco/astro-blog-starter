@@ -1,0 +1,23 @@
+---
+const { frontmatter } = Astro.props;
+import { Picture } from "astro:assets";
+---
+
+{
+  frontmatter.thumbnail && (
+    <div>
+      <Picture
+        class="rounded-xl"
+        src={frontmatter.thumbnail?.src}
+        alt={
+          frontmatter.thumbnail.alt
+            ? frontmatter.thumbnail.alt
+            : frontmatter.title
+        }
+        layout="constrained"
+        width={1200}
+        height={700}
+      />
+    </div>
+  )
+}

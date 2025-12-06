@@ -1,0 +1,30 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const { frontmatter } = Astro.props;
+const categories = await Promise.all(
+  frontmatter.categories.map((category: { id: string }) =>
+    getEntry("categories", category.id),
+  ),
+).then(
+  (categories) => categories.filter(Boolean) as CollectionEntry<"categories">[],
+);
+---
+
+<div class="flex flex-row gap-2">
+  {
+    categories.map((category) => {
+      return (
+        <span class="font-bold uppercase text-sm tracking-tight">
+          <a
+            class="text-black hover:text-sky-500 duration-200"
+            href={`/${category.id}`}
+          >
+            {category.data.title}
+          </a>
+        </span>
+      );
+    })
+  }
+</div>
