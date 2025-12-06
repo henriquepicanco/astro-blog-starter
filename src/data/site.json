@@ -1,0 +1,17 @@
+{
+  "name": "Astro Blog Starter",
+  "description": "Exercitation nulla elit commodo deserunt. Pariatur excepteur nisi veniam cillum eiusmod. Nostrud pariatur id magna officia.",
+  "language": "en-US",
+  "settings": {
+    "pagination": 2
+  },
+  "social": {
+    "github": "",
+    "twitter": "",
+    "bluesky": "",
+    "instagram": ""
+  },
+  "SEO": {
+    "robots": "follow, index"
+  }
+}
