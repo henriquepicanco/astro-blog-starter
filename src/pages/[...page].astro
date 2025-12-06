@@ -1,59 +1,26 @@
 ---
-import { getCollection, render } from "astro:content";
-import { Picture } from "astro:assets";
-
+import site from "../data/site.json";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import type { CollectionEntry } from "astro:content";
+import PostCard from "../components/PostCard.astro";
 
-export async function getStaticPaths() {
-  const pages = await getCollection("pages");
+export async function getStaticPaths({ paginate }) {
+  const posts = (await getCollection("posts")).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
 
-  return pages.map((page) => ({
-    params: { page: page.id },
-    props: { page },
-  }));
+  return paginate(posts, { pageSize: site.settings.pagination });
 }
 
 interface Props {
-  page: CollectionEntry<"pages">;
-  context: "page";
+  page?: any;
 }
 
 const { page } = Astro.props;
-const { Content } = await render(page);
 ---
 
-<Layout context="page" title={page.data.title} description={page.data.summary}>
-  <article class="flex flex-col gap-5">
-    <header class="flex flex-col gap-5">
-      <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl leading-normal">
-        {page.data.title}
-      </h1>
-      {
-        page.data.summary && (
-          <p class="text-lg text-gray-800">{page.data.summary}</p>
-        )
-      }
-    </header>
-    {
-      page.data.thumbnail && (
-        <div>
-          <Picture
-            src={page.data.thumbnail.src}
-            alt={
-              page.data.thumbnail.alt
-                ? page.data.thumbnail.alt
-                : page.data.title
-            }
-            layout="constrained"
-            width={1200}
-            height={700}
-          />
-        </div>
-      )
-    }
-    <div class="text-base md:text-lg leading-relaxed">
-      <Content />
-    </div>
-  </article>
+<Layout>
+  <div class="flex flex-col gap-5 md:gap-10">
+    {page.data.map((post: unknown) => <PostCard post={post} />)}
+  </div>
 </Layout>
