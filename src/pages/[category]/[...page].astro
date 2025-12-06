@@ -1,0 +1,46 @@
+---
+import site from "../../data/site.json";
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import PostCard from "../../components/PostCard.astro";
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("posts");
+  const allCategories = await getCollection("categories");
+
+  return allCategories.flatMap((category) => {
+    const filteredPosts = allPosts.filter((post) => {
+      const postCategories = post.data.categories || [];
+
+      return postCategories.some((reference) => reference.id === category.id);
+    });
+
+    filteredPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+    return paginate(filteredPosts, {
+      params: { category: category.id },
+      props: { category: category },
+      pageSize: site.settings.pagination,
+    });
+  });
+}
+
+const { page, category } = Astro.props;
+---
+
+<Layout>
+  <div class="my-6 lg:my-12 rounded-4xl flex flex-col gap-2 lg:gap-5">
+    <h1 class="font-bold text-2xl lg:text-4xl">
+      {category.data.title}
+    </h1>
+
+    {
+      category.data.description && (
+        <p class="max-w-200">{category.data.description}</p>
+      )
+    }
+  </div>
+  <div class="flex flex-col gap-5 md:gap-10">
+    {page.data.map((post) => <PostCard post={post} />)}
+  </div>
+</Layout>
