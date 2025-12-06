@@ -1,5 +1,5 @@
 ---
-import { site } from "../metadata";
+import site from "../data/site.json";
 
 import { ClientRouter } from "astro:transitions";
 
@@ -19,4 +19,5 @@ const setDescription = description || site.description;
 <title>{setTitle}</title>
 <meta name="description" content={setDescription} />
 <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
+<meta name="robots" content={site.SEO.robots} />
 <ClientRouter />

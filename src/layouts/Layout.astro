@@ -1,5 +1,5 @@
 ---
-import { site } from "../metadata";
+import site from "../data/site.json";
 
 import "../styles/global.css";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -10,7 +10,7 @@ import Container from "../components/Container.astro";
 interface Props {
   title?: string;
   description?: string;
-  context?: "post" | "page";
+  context?: "has-heading-1";
   size?: "wide" | "narrow";
 }
 
@@ -27,7 +27,7 @@ const { title, description, context } = Astro.props;
       <SiteHeader context={context} />
 
       <main>
-        <Container size="narrow">
+        <Container>
           <slot />
         </Container>
       </main>

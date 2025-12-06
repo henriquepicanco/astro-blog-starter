@@ -1,9 +1,9 @@
 ---
-import { getCollection, render } from "astro:content";
-import { Picture } from "astro:assets";
+import { getCollection, getEntry, render } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 import type { CollectionEntry } from "astro:content";
+import Post from "../components/Post.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -16,45 +16,19 @@ export async function getStaticPaths() {
 
 interface Props {
   post: CollectionEntry<"posts">;
-  context: "post";
+  context: "has-heading-1";
 }
 
 const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout context="post" title={post.data.title} description={post.data.summary}>
-  <article class="flex flex-col gap-5">
-    <header class="flex flex-col gap-5">
-      <h1 class="font-bold text-2xl md:text-3xl lg:text-4xl leading-normal">
-        {post.data.title}
-      </h1>
-      {
-        post.data.summary && (
-          <p class="text-lg text-gray-800">{post.data.summary}</p>
-        )
-      }
-    </header>
-    {
-      post.data.thumbnail && (
-        <div>
-          <Picture
-            class="rounded-xl"
-            src={post.data.thumbnail?.src}
-            alt={
-              post.data.thumbnail.alt
-                ? post.data.thumbnail.alt
-                : post.data.title
-            }
-            layout="constrained"
-            width={1200}
-            height={700}
-          />
-        </div>
-      )
-    }
-    <div class="text-base md:text-lg leading-loose">
-      <Content />
-    </div>
-  </article>
+<Layout
+  context="has-heading-1"
+  title={post.data.title}
+  description={post.data.summary}
+>
+  <Post frontmatter={post.data}>
+    <Content />
+  </Post>
 </Layout>

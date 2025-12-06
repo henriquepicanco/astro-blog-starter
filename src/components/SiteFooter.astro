@@ -1,12 +1,8 @@
 ---
-import { site } from "../metadata";
-
-import { getCollection } from "astro:content";
+import site from "../data/site.json";
 import Container from "./Container.astro";
 
 const currentYear = new Date().getFullYear();
-
-const pages = await getCollection("pages");
 
 interface Props {
   size?: "wide" | "narrow";
@@ -27,13 +23,9 @@ interface Props {
       <div>
         <h3 class="font-bold uppercase mb-2">Pages</h3>
         <ul>
-          {
-            pages.map((page) => (
-              <li>
-                <a href={page.id}>{page.data.title}</a>
-              </li>
-            ))
-          }
+          <li><a href="/">Homepage</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
         </ul>
       </div>
       <div>
